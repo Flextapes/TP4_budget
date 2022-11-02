@@ -11,4 +11,4 @@ def execute(command: str):
 if __name__ == '__main__':
     execute(f'git bisect start {BAD_HASH} {GOOD_HASH}')
     execute(f'git bisect run {TEST_COMMAND}')
-    execute(f'git bisect reset')
+    execute('git bisect reset')
