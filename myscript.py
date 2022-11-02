@@ -10,6 +10,7 @@ def execute(command: str):
     print(os.system(command))
 
 if __name__ == '__main__':
+    execute(f'ls')
     execute(f'git bisect start {BAD_HASH} {GOOD_HASH}')
     execute(f'git bisect run {TEST_COMMAND}')
     execute('git bisect reset')
