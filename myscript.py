@@ -2,15 +2,9 @@ import os
 
 GOOD_HASH = 'e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c'
 BAD_HASH = 'c1a4be04b972b6c17db242fc37752ad517c29402'
-TEST_FILE = '$GITHUB_WORKSPACE/manage.py'
-TEST_COMMAND = f'python {TEST_FILE} test'
-
-def execute(command: str):
-    print(f'{command} :')
-    print(os.system(command))
+TEST_COMMAND = f'python manage.py test'
 
 if __name__ == '__main__':
-    execute(f'ls')
-    execute(f'git bisect start {BAD_HASH} {GOOD_HASH}')
-    execute(f'git bisect run {TEST_COMMAND}')
-    execute('git bisect reset')
+    os.system(f'git bisect start {BAD_HASH} {GOOD_HASH}')
+    os.system(f'git bisect run {TEST_COMMAND}')
+    os.system('git bisect reset')
