@@ -6,7 +6,7 @@ TEST_COMMAND = 'python manage.py test'
 
 def execute(command: str):
     print(f'{command} :')
-    os.system(command)
+    print(os.system(command))
 
 if __name__ == '__main__':
     execute(f'git bisect start {BAD_HASH} {GOOD_HASH}')
