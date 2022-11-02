@@ -2,7 +2,8 @@ import os
 
 GOOD_HASH = 'e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c'
 BAD_HASH = 'c1a4be04b972b6c17db242fc37752ad517c29402'
-TEST_COMMAND = 'python manage.py test'
+TEST_FILE = '$GITHUB_WORKSPACE/manage.py'
+TEST_COMMAND = f'python {TEST_FILE} test'
 
 def execute(command: str):
     print(f'{command} :')
